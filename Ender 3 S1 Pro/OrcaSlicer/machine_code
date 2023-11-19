@@ -1,0 +1,19 @@
+start:
+; ESTIMATOR_ADD_TIME 10 Prime line
+SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]
+SET_PRINT_STATS_INFO CURRENT_LAYER=0
+DISPLAY_LAYER_INFO
+M140 S0
+M104 S0
+START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature]
+
+
+
+end:
+END_PRINT
+
+
+
+layer change:
+SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num+1}
+DISPLAY_LAYER_INFO
