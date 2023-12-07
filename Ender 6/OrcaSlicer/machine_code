@@ -1,0 +1,30 @@
+; Machine start Section
+; ESTIMATOR_ADD_TIME 10 Prime line
+SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]
+SET_PRINT_STATS_INFO CURRENT_LAYER=0
+DISPLAY_LAYER_INFO
+M140 S0
+M104 S0
+START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}
+
+; Machine End Section
+END_PRINT
+
+; Before Layer Change Section
+TIMELAPSE_TAKE_FRAME
+
+; Layer Change Section
+SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num+1}
+DISPLAY_LAYER_INFO
+
+; Time Lapse Section
+
+; Change Filament Section
+M600
+
+; Change Extrusion Role Section
+
+; Pause Section
+M25
+
+; Template Custom Section
