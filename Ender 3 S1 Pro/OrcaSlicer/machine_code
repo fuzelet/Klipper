@@ -5,7 +5,7 @@ SET_PRINT_STATS_INFO CURRENT_LAYER=0
 DISPLAY_LAYER_INFO
 M140 S0
 M104 S0
-START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature]
+START_PRINT EXTRUDER_TEMP=[first_layer_temperature] BED_TEMP=[first_layer_bed_temperature] PRINT_MIN={first_layer_print_min[0]},{first_layer_print_min[1]} PRINT_MAX={first_layer_print_max[0]},{first_layer_print_max[1]}
 
 ; Machine End Section
 END_PRINT
